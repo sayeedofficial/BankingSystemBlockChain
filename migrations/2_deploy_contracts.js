@@ -2,6 +2,6 @@
 // eslint-disable-next-line no-undef
 const Tether = artifacts.require("Migrations");
 
-module.exports = async function(){
-    await deployer.deploy(Tether)
-}
+module.exports = async function (deployer) {
+  await deployer.deploy(Tether);
+};
