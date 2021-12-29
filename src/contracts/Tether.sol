@@ -32,6 +32,8 @@ contract Tether {
     }
 	function approve(address _spender,uint256 _value) public returns (bool success){
 		allowance[msg.sender][_spender] = _value;
+		emit Approval(msg.sender, _spender, _value);
+		return true;
 	}
 
     function transferFrom(address _from,address _to,uint256 _value) public returns (bool success){
@@ -40,7 +42,7 @@ contract Tether {
 
         balanceOf[_to] += _value;
         balanceOf[_from] -= _value;
-        allowance[msg.sender][_from] -= _value;
+        allowance[_from][msg.sender] -= _value;
         emit Transfer(_from,_to,_value);
         return true;
     }
