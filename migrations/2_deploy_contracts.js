@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const RWD = artifacts.require('RWD')
 const Tether = artifacts.require('Tether')
 const DecentralBank = artifacts.require('DecentralBank')
